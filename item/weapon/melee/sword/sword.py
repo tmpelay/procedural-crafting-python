@@ -1,10 +1,12 @@
-from weapon.melee.melee import Melee
+from item.weapon.melee.melee import Melee
 
 class Sword(Melee):
-    def __init__(self, hands, name, weight, damage, length):
+    def __init__(self, hands, name, damage, length, blade, grip):
         super().__init__(hands)
         self.name = name
-        self.weight = weight
+        self.blade = blade
+        self.grip = grip
+        self.weight = blade.weight + grip.weight
         self.damage = damage
         self.lenght = length
         
